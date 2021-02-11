@@ -9,6 +9,6 @@ namespace EncoraTestBLL.DLL
         public DbSet<Property> Properties { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-           => options.UseSqlServer("Server=localhost,1433; Database=EncoraTest;User=sa; Password=120988daz@");
+           => options.UseSqlServer("Server=localhost,1433; Database=EncoraTest;User=sa; Password=password@");
     }
 }
