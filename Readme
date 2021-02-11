@@ -1,1 +1,4 @@
-
+Run the script to create the database called CreateDatabase
+Change the connection string in the file called EncoraTestContext line 12 to match your connection parameters
+Run in the command line dotnet ef database update to create the tables in the database
+Run the app
