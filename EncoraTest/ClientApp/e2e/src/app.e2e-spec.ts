@@ -7,8 +7,8 @@ describe('App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display encora test title', () => {
     page.navigateTo();
-    expect(page.getMainHeading()).toEqual('Hello, world!');
+    expect(page.getMainHeading()).toEqual('Encora Technical Test for Roofstock');
   });
 });
