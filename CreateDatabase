@@ -1,0 +1,7 @@
+/* Create database */
+CREATE DATABASE EncoraTest;
+GO
+
+/* Change to the database */
+USE EncoraTest;
+GO
