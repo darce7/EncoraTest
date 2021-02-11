@@ -1,0 +1,29 @@
+<h1>Encora Technical Test for Roofstock</h1>
+
+<p *ngIf="!properties"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="properties">
+    <thead>
+        <tr>
+            <th>Address</th>
+            <th>Year Built</th>
+            <th>List Price</th>
+            <th>Monthly Rent</th>
+            <th>Gross Yield %</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let property of properties">
+            <td><span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(property.id, 'address', 'fullAddress', $event)">{{ property.address.fullAddress }}</span></td>
+            <td><span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(property.id, 'physical', 'yearBuilt', $event)">{{ property.physical?.yearBuilt || 'No year built available'}}</span></td>
+            <td><span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(property.id, 'financial', 'listPrice', $event)">{{ formatNumber(property.financial?.listPrice) || 'No list price available'}}</span></td>
+            <td><span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(property.id, 'financial', 'monthlyRent', $event)">{{ formatNumber(property.financial?.monthlyRent) || 'No monthly rent available'}}</span></td>
+            <td><span contenteditable="false">{{ formatNumber(getGrossYield(property.id)) || 'No Gross Yield % available'}}%</span></td>
+            <td>
+                <span>
+                    <button type="button" rounded="true" (click)="save(property)">Save</button>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
